@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SODIUM • Company</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #0b0e14; color: #ffffff; overflow-x: hidden; }
+
+    /* Loading Screen */
+    #loader {
+      position: fixed; inset: 0; background: #0b0e14;
+      display: flex; justify-content: center; align-items: center;
+      z-index: 5000;
+    }
+    #loader img {
+      width: 120px;
+      animation: pulse 1.6s infinite ease-in-out;
+      filter: drop-shadow(0 0 25px rgba(0,234,255,0.8));
+    }
+
+    /* Navbar */
+    header {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 60px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img {
+      height: 42px;
+      filter: drop-shadow(0 0 10px rgba(0,234,255,0.6));
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover { transform: rotate(-5deg) scale(1.1); }
+    .logo span { letter-spacing: 4px; color: #00eaff; font-weight: 700; }
+
+    nav a {
+      margin-left: 30px; text-decoration: none; color: #fff; position: relative;
+    }
+    nav a::after {
+      content: ''; position: absolute; left: 0; bottom: -5px;
+      width: 0; height: 2px; background: #00eaff; transition: 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* Sections */
+    section { min-height: 100vh; padding: 140px 80px; }
+
+    /* Hero */
+    .hero {
+      display: flex; flex-direction: column; justify-content: center; position: relative;
+    }
+    .hero-logo {
+      position: absolute; right: 80px; top: 50%; transform: translateY(-50%);
+      width: 220px; animation: float 4s ease-in-out infinite;
+      filter: drop-shadow(0 0 40px rgba(0,234,255,0.6));
+    }
+    .hero h2 { font-size: 64px; line-height: 1.2; animation: slideIn 1.2s ease forwards; }
+    .hero span { color: #00eaff; }
+    .hero p { max-width: 600px; margin-top: 20px; color: #aaa; animation: fadeIn 2s ease forwards; }
+
+    /* Cards */
+    .card-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px; margin-top: 50px;
+    }
+    .card {
+      background: #111520; padding: 30px; border-radius: 16px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px rgba(0,234,255,0.3);
+    }
+
+    footer { text-align: center; padding: 40px; color: #777; background: #090c12; }
+
+    /* Animations */
+    @keyframes slideIn { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes float { 0%,100% { transform: translateY(-50%) translateY(0); } 50% { transform: translateY(-50%) translateY(-20px); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <img src="logo.png" alt="Loading Sodium" />
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Sodium Logo" />
+      <span>SODIUM</span>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Building the <span>Future</span><br>With Innovation</h2>
+    <p>Sodium is a technology company focused on modern software, design, and digital experiences.</p>
+    <img src="logo.png" class="hero-logo" alt="Floating Sodium Logo" />
+  </section>
+
+  <section id="about">
+    <h2>About Sodium</h2>
+    <div class="card-grid">
+      <div class="card">Creative Design</div>
+      <div class="card">Powerful Code</div>
+      <div class="card">Future Vision</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Our Projects</h2>
+    <div class="card-grid">
+      <div class="card">Project Alpha</div>
+      <div class="card">Project Beta</div>
+      <div class="card">Project Gamma</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@sodium.company</p>
+  </section>
+
+  <footer>© 2026 SODIUM Company. All rights reserved.</footer>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
