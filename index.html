@@ -116,6 +116,71 @@
       animation: fadeIn 2s ease forwards;
     }
 
+    /* CTA Button */
+    .cta-btn {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 40px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #6dff8b, #2cff6a);
+      color: #08110a;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-align: center;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 0 20px rgba(109,255,139,0.45),
+        0 0 60px rgba(44,255,106,0.25);
+      animation: glowPulse 2.5s infinite ease-in-out;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow:
+        0 0 35px rgba(109,255,139,0.8),
+        0 0 80px rgba(44,255,106,0.6);
+    }
+
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 120%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+      );
+      animation: shine 3.5s infinite;
+    }
+
+    @keyframes glowPulse {
+      0%,100% {
+        box-shadow:
+          0 0 18px rgba(109,255,139,0.4),
+          0 0 50px rgba(44,255,106,0.2);
+      }
+      50% {
+        box-shadow:
+          0 0 30px rgba(109,255,139,0.8),
+          0 0 80px rgba(44,255,106,0.55);
+      }
+    }
+
+    @keyframes shine {
+      0% { left: -120%; }
+      60% { left: 120%; }
+      100% { left: 120%; }
+    }
+
     /* Cards */
     .card-grid {
       display: grid;
@@ -176,6 +241,7 @@
     <h2>Building the <span>Future</span><br>With Innovation</h2>
     <div class="tagline">Web • Gaming Communities • Video Editing • IT • Social Media</div>
     <p>Sodium is a technology company focused on modern software, design, gaming communities, and digital experiences.</p>
+    <a href="community.html" class="cta-btn">Become a member of our community</a>
     <img src="logo.png" class="hero-logo" alt="Floating Sodium Logo" />
   </section>
 
